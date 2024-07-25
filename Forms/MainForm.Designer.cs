@@ -1,4 +1,4 @@
-﻿partial class Main
+﻿partial class MainForm
 {
 	/// <summary>
 	///  Required designer variable.
@@ -26,12 +26,14 @@
 	/// </summary>
 	private void InitializeComponent()
 	{
+		System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 		QueryResultsGrid = new DataGridView();
 		splitContainer1 = new SplitContainer();
 		splitContainer3 = new SplitContainer();
 		QueryResultTextBox = new TextBox();
 		ExecuteScriptButton = new Button();
 		splitContainer2 = new SplitContainer();
+		SettingsButton = new Button();
 		SendQueryButton = new Button();
 		QueryTextBox = new TextBox();
 		splitContainer4 = new SplitContainer();
@@ -58,9 +60,10 @@
 		// QueryResultsGrid
 		// 
 		QueryResultsGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+		QueryResultsGrid.Dock = DockStyle.Fill;
 		QueryResultsGrid.Location = new Point(0, 0);
 		QueryResultsGrid.Name = "QueryResultsGrid";
-		QueryResultsGrid.Size = new Size(547, 675);
+		QueryResultsGrid.Size = new Size(326, 455);
 		QueryResultsGrid.TabIndex = 0;
 		QueryResultsGrid.CellDoubleClick += QueryResultsGrid_CellDoubleClick;
 		// 
@@ -73,17 +76,21 @@
 		// splitContainer1.Panel1
 		// 
 		splitContainer1.Panel1.Controls.Add(splitContainer3);
+		splitContainer1.Panel1MinSize = 200;
 		// 
 		// splitContainer1.Panel2
 		// 
 		splitContainer1.Panel2.Controls.Add(QueryResultsGrid);
-		splitContainer1.Size = new Size(928, 482);
-		splitContainer1.SplitterDistance = 377;
+		splitContainer1.Panel2MinSize = 200;
+		splitContainer1.Size = new Size(684, 455);
+		splitContainer1.SplitterDistance = 354;
 		splitContainer1.TabIndex = 1;
 		// 
 		// splitContainer3
 		// 
 		splitContainer3.Dock = DockStyle.Fill;
+		splitContainer3.FixedPanel = FixedPanel.Panel2;
+		splitContainer3.IsSplitterFixed = true;
 		splitContainer3.Location = new Point(0, 0);
 		splitContainer3.Name = "splitContainer3";
 		splitContainer3.Orientation = Orientation.Horizontal;
@@ -96,8 +103,9 @@
 		// 
 		splitContainer3.Panel2.Controls.Add(ExecuteScriptButton);
 		splitContainer3.Panel2.Padding = new Padding(10);
-		splitContainer3.Size = new Size(377, 482);
-		splitContainer3.SplitterDistance = 422;
+		splitContainer3.Panel2MinSize = 50;
+		splitContainer3.Size = new Size(354, 455);
+		splitContainer3.SplitterDistance = 399;
 		splitContainer3.TabIndex = 1;
 		// 
 		// QueryResultTextBox
@@ -107,15 +115,15 @@
 		QueryResultTextBox.Multiline = true;
 		QueryResultTextBox.Name = "QueryResultTextBox";
 		QueryResultTextBox.ScrollBars = ScrollBars.Both;
-		QueryResultTextBox.Size = new Size(377, 422);
+		QueryResultTextBox.Size = new Size(354, 399);
 		QueryResultTextBox.TabIndex = 0;
 		// 
 		// ExecuteScriptButton
 		// 
 		ExecuteScriptButton.Dock = DockStyle.Right;
-		ExecuteScriptButton.Location = new Point(292, 10);
+		ExecuteScriptButton.Location = new Point(269, 10);
 		ExecuteScriptButton.Name = "ExecuteScriptButton";
-		ExecuteScriptButton.Size = new Size(75, 36);
+		ExecuteScriptButton.Size = new Size(75, 32);
 		ExecuteScriptButton.TabIndex = 0;
 		ExecuteScriptButton.Text = "Execute";
 		ExecuteScriptButton.UseVisualStyleBackColor = true;
@@ -124,29 +132,44 @@
 		// splitContainer2
 		// 
 		splitContainer2.Dock = DockStyle.Fill;
+		splitContainer2.FixedPanel = FixedPanel.Panel1;
+		splitContainer2.IsSplitterFixed = true;
 		splitContainer2.Location = new Point(0, 0);
 		splitContainer2.Name = "splitContainer2";
 		splitContainer2.Orientation = Orientation.Horizontal;
 		// 
 		// splitContainer2.Panel1
 		// 
+		splitContainer2.Panel1.Controls.Add(SettingsButton);
 		splitContainer2.Panel1.Controls.Add(SendQueryButton);
 		splitContainer2.Panel1.Controls.Add(QueryTextBox);
 		splitContainer2.Panel1.Padding = new Padding(10);
+		splitContainer2.Panel1MinSize = 75;
 		// 
 		// splitContainer2.Panel2
 		// 
 		splitContainer2.Panel2.Controls.Add(splitContainer4);
-		splitContainer2.Size = new Size(928, 753);
-		splitContainer2.SplitterDistance = 74;
+		splitContainer2.Size = new Size(684, 761);
+		splitContainer2.SplitterDistance = 75;
 		splitContainer2.TabIndex = 2;
+		// 
+		// SettingsButton
+		// 
+		SettingsButton.Dock = DockStyle.Left;
+		SettingsButton.Image = (Image)resources.GetObject("SettingsButton.Image");
+		SettingsButton.Location = new Point(10, 33);
+		SettingsButton.Name = "SettingsButton";
+		SettingsButton.Size = new Size(28, 32);
+		SettingsButton.TabIndex = 2;
+		SettingsButton.UseVisualStyleBackColor = true;
+		SettingsButton.Click += SettingsButton_Click;
 		// 
 		// SendQueryButton
 		// 
 		SendQueryButton.Dock = DockStyle.Right;
-		SendQueryButton.Location = new Point(843, 33);
+		SendQueryButton.Location = new Point(599, 33);
 		SendQueryButton.Name = "SendQueryButton";
-		SendQueryButton.Size = new Size(75, 31);
+		SendQueryButton.Size = new Size(75, 32);
 		SendQueryButton.TabIndex = 0;
 		SendQueryButton.Text = "Send";
 		SendQueryButton.UseVisualStyleBackColor = true;
@@ -157,7 +180,7 @@
 		QueryTextBox.Dock = DockStyle.Top;
 		QueryTextBox.Location = new Point(10, 10);
 		QueryTextBox.Name = "QueryTextBox";
-		QueryTextBox.Size = new Size(908, 23);
+		QueryTextBox.Size = new Size(664, 23);
 		QueryTextBox.TabIndex = 1;
 		// 
 		// splitContainer4
@@ -170,12 +193,14 @@
 		// splitContainer4.Panel1
 		// 
 		splitContainer4.Panel1.Controls.Add(splitContainer1);
+		splitContainer4.Panel1MinSize = 200;
 		// 
 		// splitContainer4.Panel2
 		// 
 		splitContainer4.Panel2.Controls.Add(textBoxOutput);
-		splitContainer4.Size = new Size(928, 675);
-		splitContainer4.SplitterDistance = 482;
+		splitContainer4.Panel2MinSize = 100;
+		splitContainer4.Size = new Size(684, 682);
+		splitContainer4.SplitterDistance = 455;
 		splitContainer4.TabIndex = 2;
 		// 
 		// textBoxOutput
@@ -185,17 +210,19 @@
 		textBoxOutput.Multiline = true;
 		textBoxOutput.Name = "textBoxOutput";
 		textBoxOutput.ScrollBars = ScrollBars.Both;
-		textBoxOutput.Size = new Size(928, 189);
+		textBoxOutput.Size = new Size(684, 223);
 		textBoxOutput.TabIndex = 0;
 		// 
-		// Main
+		// MainForm
 		// 
 		AutoScaleDimensions = new SizeF(7F, 15F);
 		AutoScaleMode = AutoScaleMode.Font;
-		ClientSize = new Size(928, 753);
+		ClientSize = new Size(684, 761);
 		Controls.Add(splitContainer2);
-		Name = "Main";
-		Text = "DemonAI";
+		Icon = (Icon)resources.GetObject("$this.Icon");
+		MinimumSize = new Size(480, 450);
+		Name = "MainForm";
+		Text = "AIDemon";
 		((System.ComponentModel.ISupportInitialize)QueryResultsGrid).EndInit();
 		splitContainer1.Panel1.ResumeLayout(false);
 		splitContainer1.Panel2.ResumeLayout(false);
@@ -231,5 +258,6 @@
 	private Button ExecuteScriptButton;
 	private SplitContainer splitContainer4;
 	private TextBox textBoxOutput;
+	private Button SettingsButton;
 }
 

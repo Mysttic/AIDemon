@@ -1,8 +1,8 @@
 using System.Diagnostics;
 
-public partial class Main : Form
+public partial class MainForm : Form
 {
-	public Main()
+	public MainForm()
 	{
 		InitializeComponent();
 		QueryResultsGrid.Columns.Add("Query", "Query");
@@ -11,8 +11,9 @@ public partial class Main : Form
 
 	private void QueryResultsGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
 	{
-		//QueryResultsGrid.Rows[e.RowIndex][e.ColumnIndex]
-		string text = QueryResultsGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+		string? text = QueryResultsGrid.Rows[e.RowIndex]
+								.Cells[e.ColumnIndex].Value
+								.ToString();
 		QueryResultTextBox.Text = text;
 	}
 
@@ -24,7 +25,7 @@ public partial class Main : Form
 			return;
 		}
 		string result = "";
-		QueryResultDialog queryResultDialog = new QueryResultDialog(QueryTextBox.Text);
+		QueryResultForm queryResultDialog = new QueryResultForm(QueryTextBox.Text);
 		queryResultDialog.FormClosed += (s, ev) =>
 		{
 			result = queryResultDialog.QueryResultTextBox.Text;
@@ -80,5 +81,11 @@ public partial class Main : Form
 		{
 			textBoxOutput.AppendText(text + Environment.NewLine);
 		}
+	}
+
+	private void SettingsButton_Click(object sender, EventArgs e)
+	{
+		SettingsForm settingsForm = new SettingsForm();
+		settingsForm.Show();
 	}
 }

@@ -1,10 +1,10 @@
 ﻿using AIDemon.Properties;
 using OpenAI.Chat;
 
-public partial class QueryResultDialog : Form
+public partial class QueryResultForm : Form
 {
 	public bool Saved { get; private set; } = false;
-	public QueryResultDialog(string query)
+	public QueryResultForm(string query)
 	{
 		InitializeComponent();
 		this.Text = query;
