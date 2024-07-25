@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIDemon", "AIDemon.csproj", "{02C0F26A-AB3B-439D-A5B2-62B8FCF300A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AIDemon", "AIDemon.csproj", "{02C0F26A-AB3B-439D-A5B2-62B8FCF300A9}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AIDemon.Setup", "..\AIDemon.Setup\AIDemon.Setup.vdproj", "{63866A2B-D07E-4176-ABB1-BC896CC0019C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{02C0F26A-AB3B-439D-A5B2-62B8FCF300A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02C0F26A-AB3B-439D-A5B2-62B8FCF300A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02C0F26A-AB3B-439D-A5B2-62B8FCF300A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63866A2B-D07E-4176-ABB1-BC896CC0019C}.Debug|Any CPU.ActiveCfg = Debug
+		{63866A2B-D07E-4176-ABB1-BC896CC0019C}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

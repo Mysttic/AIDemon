@@ -64,6 +64,7 @@
 		MinimumSize = new Size(225, 120);
 		Name = "QueryResultForm";
 		Padding = new Padding(3, 3, 3, 10);
+		StartPosition = FormStartPosition.CenterParent;
 		Text = "QueryResultDialog";
 		ResumeLayout(false);
 		PerformLayout();

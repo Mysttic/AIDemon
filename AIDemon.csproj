@@ -7,7 +7,12 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <PackageIcon>fox_white_128x128.png</PackageIcon>
+    <ApplicationIcon>fox.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="fox.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="OpenAI" Version="2.0.0-beta.7" />

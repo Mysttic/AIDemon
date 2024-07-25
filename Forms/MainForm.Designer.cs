@@ -222,6 +222,7 @@
 		Icon = (Icon)resources.GetObject("$this.Icon");
 		MinimumSize = new Size(480, 450);
 		Name = "MainForm";
+		StartPosition = FormStartPosition.CenterScreen;
 		Text = "AIDemon";
 		((System.ComponentModel.ISupportInitialize)QueryResultsGrid).EndInit();
 		splitContainer1.Panel1.ResumeLayout(false);
